@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find It - Instant Delivery</title>
+      <style>
+/* =========================
+   FIND IT - MODERN CSS
+   ========================= */
+
+:root {
+    --primary: #00c853;
+    --primary-dark: #00a844;
+    --secondary: #121212;
+    --background: #f5f7fb;
+    --white: #ffffff;
+    --gray-100: #f0f2f5;
+    --gray-200: #e4e6eb;
+    --gray-400: #8b95a7;
+    --gray-700: #2d3748;
+    --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+    --shadow-md: 0 10px 25px rgba(0,0,0,0.12);
+    --shadow-lg: 0 20px 45px rgba(0,0,0,0.18);
+    --radius-sm: 12px;
+    --radius-md: 18px;
+    --radius-lg: 28px;
+    --transition: all 0.3s ease;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family: Inter, Arial, sans-serif;
+    background: var(--background);
+    color: var(--gray-700);
+    min-height:100vh;
+}
+
+/* =========================
+   HEADER
+   ========================= */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+
+    padding:18px 40px;
+
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(18px);
+
+    box-shadow:var(--shadow-sm);
+}
+
+.logo h1{
+    color:var(--primary);
+    font-size:2rem;
+    font-weight:800;
+}
+
+.location h3{
+    font-size:0.8rem;
+    color:var(--gray-400);
+}
+
+.location p{
+    font-weight:600;
+}
+
+.search-bar{
+    flex:1;
+}
+
+.search-bar input{
+    width:100%;
+    border:none;
+    outline:none;
+
+    padding:16px 20px;
+
+    background:var(--gray-100);
+
+    border-radius:999px;
+
+    font-size:1rem;
+}
+
+.header-actions{
+    display:flex;
+    gap:12px;
+}
+
+.header-actions button{
+    border:none;
+    cursor:pointer;
+
+    padding:12px 20px;
+
+    border-radius:999px;
+
+    font-weight:600;
+
+    transition:var(--transition);
+}
+
+.header-actions button:first-child{
+    background:var(--white);
+}
+
+.header-actions button:last-child{
+    background:var(--primary);
+    color:white;
+}
+
+.header-actions button:hover{
+    transform:translateY(-2px);
+}
+
+/* =========================
+   HERO
+   ========================= */
+
+.hero{
+    margin:30px;
+    border-radius:var(--radius-lg);
+
+    min-height:420px;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:
+    linear-gradient(
+    135deg,
+    #00c853,
+    #00e676,
+    #64ffda);
+
+    color:white;
+
+    box-shadow:var(--shadow-lg);
+}
+
+.hero-content{
+    text-align:center;
+}
+
+.hero-content h2{
+    font-size:3.5rem;
+    margin-bottom:15px;
+}
+
+.hero-content p{
+    font-size:1.2rem;
+    margin-bottom:25px;
+}
+
+.hero-content button{
+    border:none;
+    cursor:pointer;
+
+    padding:16px 35px;
+
+    font-size:1rem;
+    font-weight:700;
+
+    border-radius:999px;
+
+    background:white;
+    color:var(--primary);
+
+    transition:var(--transition);
+}
+
+.hero-content button:hover{
+    transform:scale(1.05);
+}
+
+/* =========================
+   SECTION TITLES
+   ========================= */
+
+section{
+    padding:40px;
+}
+
+section h2{
+    margin-bottom:25px;
+    font-size:2rem;
+}
+
+/* =========================
+   CATEGORY GRID
+   ========================= */
+
+.category-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(160px,1fr));
+
+    gap:20px;
+}
+
+.category-card{
+    background:white;
+
+    padding:24px;
+
+    border-radius:var(--radius-md);
+
+    text-align:center;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    cursor:pointer;
+}
+
+.category-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.category-card img{
+    width:80px;
+    height:80px;
+    object-fit:cover;
+}
+
+.category-card p{
+    margin-top:15px;
+    font-weight:700;
+}
+
+/* =========================
+   PRODUCTS
+   ========================= */
+
+.products-grid{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(240px,1fr));
+
+    gap:24px;
+}
+
+.product-card{
+    background:white;
+
+    border-radius:var(--radius-md);
+
+    padding:20px;
+
+    box-shadow:var(--shadow-sm);
+
+    transition:var(--transition);
+
+    position:relative;
+}
+
+.product-card:hover{
+    transform:translateY(-8px);
+    box-shadow:var(--shadow-md);
+}
+
+.product-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+
+    border-radius:var(--radius-sm);
+}
+
+.product-card h3{
+    margin-top:15px;
+}
+
+.product-card p{
+    color:var(--gray-400);
+    margin-top:5px;
+}
+
+.product-card span{
+    display:block;
+    margin-top:12px;
+
+    font-size:1.2rem;
+    font-weight:700;
+
+    color:var(--primary);
+}
+
+.product-card button{
+    margin-top:15px;
+
+    width:100%;
+
+    border:none;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    background:var(--primary);
+
+    color:white;
+
+    cursor:pointer;
+
+    font-weight:700;
+
+    transition:var(--transition);
+}
+
+.product-card button:hover{
+    background:var(--primary-dark);
+}
+
+/* =========================
+   OFFERS
+   ========================= */
+
+.offer-container{
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(250px,1fr));
+
+    gap:20px;
+}
+
+.offer-card{
+    padding:30px;
+
+    border-radius:var(--radius-md);
+
+    color:white;
+
+    background:
+    linear-gradient(
+    135deg,
+    #6a11cb,
+    #2575fc);
+
+    box-shadow:var(--shadow-md);
+
+    transition:var(--transition);
+}
+
+.offer-card:hover{
+    transform:translateY(-6px);
+}
+
+.offer-card h3{
+    font-size:2rem;
+    margin-bottom:10px;
+}
+
+/* =========================
+   ORDERS
+   ========================= */
+
+.order-card{
+    background:white;
+
+    padding:20px;
+
+    margin-bottom:15px;
+
+    border-radius:var(--radius-md);
+
+    box-shadow:var(--shadow-sm);
+}
+
+/* =========================
+   FOOTER
+   ========================= */
+
+footer{
+    margin-top:60px;
+
+    background:#111827;
+
+    color:white;
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(220px,1fr));
+
+    gap:30px;
+
+    padding:60px 40px;
+}
+
+.footer-section h3{
+    margin-bottom:15px;
+}
+
+.footer-section ul{
+    list-style:none;
+}
+
+.footer-section li{
+    margin-bottom:10px;
+    cursor:pointer;
+}
+
+.footer-section li:hover{
+    color:#00e676;
+}
+
+/* =========================
+   RESPONSIVE
+   ========================= */
+
+@media(max-width:900px){
+
+    header{
+        flex-wrap:wrap;
+        padding:20px;
+    }
+
+    .hero-content h2{
+        font-size:2.3rem;
+    }
+
+    section{
+        padding:20px;
+    }
+}
+
+@media(max-width:600px){
+
+    .hero{
+        min-height:300px;
+    }
+
+    .hero-content h2{
+        font-size:1.8rem;
+    }
+
+    .hero-content p{
+        font-size:1rem;
+    }
+
+    .header-actions{
+        width:100%;
+    }
+
+    .header-actions button{
+        flex:1;
+    }
+}
+</style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">
+            <h1>FOUR BASKET</h1>
+        </div>
+
+        <div class="location">
+            <h3>Delivering To</h3>
+            <p>Your Location</p>
+        </div>
+
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products">
+        </div>
+
+        <div class="header-actions">
+            <button>Login</button>
+            <button>Cart (0)</button>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Get Anything Delivered in Minutes</h2>
+            <p>Groceries, Electronics, Fashion & More</p>
+            <button>Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="categories">
+        <h2>Shop By Category</h2>
+
+        <div class="category-grid">
+
+            <div class="category-card">
+                <img src="" alt="">
+                <p>Vegetables</p>
+            </div>
+
+            <div class="category-card">
+                <img src="" alt="">
+                <p>Fruits</p>
+            </div>
+
+            <div class="category-card">
+                <img src="" alt="">
+                <p>Dairy</p>
+            </div>
+
+            <div class="category-card">
+                <img src="" alt="">
+                <p>Snacks</p>
+            </div>
+
+            <div class="category-card">
+                <img src="" alt="">
+                <p>Beverages</p>
+            </div>
+
+            <div class="category-card">
+                <img src="" alt="">
+                <p>Medicine</p>
+            </div>
+
+            <div class="category-card">
+                <img src="" alt="">
+                <p>Electronics</p>
+            </div>
+
+            <div class="category-card">
+                <img src="" alt="">
+                <p>Fashion</p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="featured-products">
+
+        <h2>Popular Products</h2>
+
+        <div class="products-grid">
+
+            <div class="product-card">
+                <img src="" alt="">
+                <h3>Fresh Milk</h3>
+                <p>1 Litre</p>
+                <span>₹60</span>
+                <button>Add</button>
+            </div>
+
+            <div class="product-card">
+                <img src="" alt="">
+                <h3>Bananas</h3>
+                <p>1 Kg</p>
+                <span>₹55</span>
+                <button>Add</button>
+            </div>
+
+            <div class="product-card">
+                <img src="" alt="">
+                <h3>Potato Chips</h3>
+                <p>200g</p>
+                <span>₹40</span>
+                <button>Add</button>
+            </div>
+
+            <div class="product-card">
+                <img src="" alt="">
+                <h3>Cold Drink</h3>
+                <p>750ml</p>
+                <span>₹90</span>
+                <button>Add</button>
+            </div>
+
+            <div class="product-card">
+                <img src="" alt="">
+                <h3>Chocolate</h3>
+                <p>100g</p>
+                <span>₹120</span>
+                <button>Add</button>
+            </div>
+
+            <div class="product-card">
+                <img src="" alt="">
+                <h3>Bread</h3>
+                <p>400g</p>
+                <span>₹35</span>
+                <button>Add</button>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Offers -->
+    <section class="offers">
+
+        <h2>Exclusive Offers</h2>
+
+        <div class="offer-container">
+
+            <div class="offer-card">
+                <h3>50% OFF</h3>
+                <p>On first order</p>
+            </div>
+
+            <div class="offer-card">
+                <h3>Free Delivery</h3>
+                <p>Above ₹299</p>
+            </div>
+
+            <div class="offer-card">
+                <h3>Cashback</h3>
+                <p>Using UPI</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Orders -->
+    <section class="orders">
+
+        <h2>Recent Orders</h2>
+
+        <div class="order-card">
+            <h3>Order #12345</h3>
+            <p>Status: Delivered</p>
+        </div>
+
+        <div class="order-card">
+            <h3>Order #12346</h3>
+            <p>Status: On The Way</p>
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-section">
+            <h3>Find It</h3>
+            <p>Fastest Delivery Platform</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+                <li>About Us</li>
+                <li>Careers</li>
+                <li>Blog</li>
+            </ul>
+        </div>
+
+        <div class="footer-section">
+            <h3>Support</h3>
+            <ul>
+                <li>Help Center</li>
+                <li>Privacy Policy</li>
+                <li>Terms & Conditions</li>
+            </ul>
+        </div>
+
+    </footer>
+
+    <script>// ================================
+// FIND IT APP JAVASCRIPT
+// PART 1
+// ================================
+
+// Product Database
+
+const products = [
+
+{
+id:1,
+name:"Fresh Milk",
+category:"Dairy",
+price:60,
+quantity:"1 Litre",
+image:"milk.jpg"
+},
+
+{
+id:2,
+name:"Banana",
+category:"Fruits",
+price:55,
+quantity:"1 Kg",
+image:"banana.jpg"
+},
+
+{
+id:3,
+name:"Apple",
+category:"Fruits",
+price:140,
+quantity:"1 Kg",
+image:"apple.jpg"
+},
+
+{
+id:4,
+name:"Chocolate",
+category:"Snacks",
+price:120,
+quantity:"100g",
+image:"chocolate.jpg"
+},
+
+{
+id:5,
+name:"Cold Drink",
+category:"Beverages",
+price:90,
+quantity:"750ml",
+image:"drink.jpg"
+},
+
+{
+id:6,
+name:"Bread",
+category:"Bakery",
+price:35,
+quantity:"400g",
+image:"bread.jpg"
+},
+
+{
+id:7,
+name:"Laptop",
+category:"Electronics",
+price:45000,
+quantity:"1 Unit",
+image:"laptop.jpg"
+},
+
+{
+id:8,
+name:"Headphones",
+category:"Electronics",
+price:2500,
+quantity:"1 Unit",
+image:"headphones.jpg"
+}
+
+];
+
+// ================================
+// LOCAL STORAGE
+// ================================
+
+let cart =
+JSON.parse(
+localStorage.getItem("cart")
+) || [];
+
+saveCart();
+
+function saveCart(){
+
+localStorage.setItem(
+"cart",
+JSON.stringify(cart)
+);
+
+updateCartCount();
+
+}
+
+// ================================
+// UPDATE CART COUNT
+// ================================
+
+function updateCartCount(){
+
+const cartBtn =
+document.querySelector(
+".header-actions button:last-child"
+);
+
+if(cartBtn){
+
+cartBtn.textContent =
+`Cart (${cart.length})`;
+
+}
+
+}
+
+// ================================
+// RENDER PRODUCTS
+// ================================
+
+function renderProducts(list){
+
+const container =
+document.querySelector(
+".products-grid"
+);
+
+if(!container) return;
+
+container.innerHTML = "";
+
+list.forEach(product => {
+
+const card =
+document.createElement("div");
+
+card.classList.add(
+"product-card"
+);
+
+card.innerHTML = `
+
+<img
+src="${product.image}"
+alt="${product.name}"
+>
+
+<h3>${product.name}</h3>
+
+<p>${product.quantity}</p>
+
+<span>₹${product.price}</span>
+
+<button
+onclick="addToCart(${product.id})"
+>
+Add To Cart
+</button>
+
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+// ================================
+// ADD TO CART
+// ================================
+
+function addToCart(id){
+
+const product =
+products.find(
+item => item.id === id
+);
+
+if(!product) return;
+
+cart.push(product);
+
+saveCart();
+
+showNotification(
+`${product.name} added`
+);
+
+}
+
+// ================================
+// REMOVE FROM CART
+// ================================
+
+function removeFromCart(id){
+
+cart =
+cart.filter(
+item => item.id !== id
+);
+
+saveCart();
+
+renderCart();
+
+}
+
+// ================================
+// RENDER CART
+// ================================
+
+function renderCart(){
+
+const cartContainer =
+document.querySelector(
+".cart-container"
+);
+
+if(!cartContainer) return;
+
+cartContainer.innerHTML = "";
+
+cart.forEach(item => {
+
+const div =
+document.createElement("div");
+
+div.className =
+"cart-item";
+
+div.innerHTML = `
+
+<h4>${item.name}</h4>
+
+<p>₹${item.price}</p>
+
+<button
+onclick="removeFromCart(${item.id})"
+>
+Remove
+</button>
+
+`;
+
+cartContainer.appendChild(div);
+
+});
+
+}
+
+// ================================
+// TOTAL PRICE
+// ================================
+
+function getTotalPrice(){
+
+let total = 0;
+
+cart.forEach(item => {
+
+total += item.price;
+
+});
+
+return total;
+
+}
+
+// ================================
+// SEARCH
+// ================================
+
+const searchInput =
+document.querySelector(
+".search-bar input"
+);
+
+if(searchInput){
+
+searchInput.addEventListener(
+"input",
+function(){
+
+const value =
+this.value.toLowerCase();
+
+const filtered =
+products.filter(product =>
+
+product.name
+.toLowerCase()
+.includes(value)
+
+);
+
+renderProducts(filtered);
+
+}
+);
+
+}
+
+// ================================
+// CATEGORY FILTER
+// ================================
+
+const categoryCards =
+document.querySelectorAll(
+".category-card"
+);
+
+categoryCards.forEach(card => {
+
+card.addEventListener(
+"click",
+function(){
+
+const category =
+this.textContent.trim();
+
+const filtered =
+products.filter(product =>
+
+product.category
+.toLowerCase() ===
+category.toLowerCase()
+
+);
+
+renderProducts(filtered);
+
+}
+);
+
+});
+
+// ================================
+// NOTIFICATION
+// ================================
+
+function showNotification(text){
+
+const note =
+document.createElement("div");
+
+note.className =
+"notification";
+
+note.textContent =
+text;
+
+document.body.appendChild(
+note
+);
+
+setTimeout(() => {
+
+note.remove();
+
+},2500);
+
+}
+
+// ================================
+// INITIAL LOAD
+// ================================
+
+window.addEventListener(
+"load",
+() => {
+
+renderProducts(products);
+
+updateCartCount();
+
+}
+);
+// ================================
+// FIND IT APP JAVASCRIPT
+// PART 2
+// ================================
+
+// Wishlist Storage
+
+let wishlist =
+JSON.parse(
+localStorage.getItem("wishlist")
+) || [];
+
+saveWishlist();
+
+function saveWishlist(){
+
+localStorage.setItem(
+"wishlist",
+JSON.stringify(wishlist)
+);
+
+}
+
+// ================================
+// ADD TO WISHLIST
+// ================================
+
+function addToWishlist(id){
+
+const product =
+products.find(
+item => item.id === id
+);
+
+if(!product) return;
+
+const exists =
+wishlist.find(
+item => item.id === id
+);
+
+if(exists){
+
+showNotification(
+"Already in wishlist"
+);
+
+return;
+
+}
+
+wishlist.push(product);
+
+saveWishlist();
+
+showNotification(
+"Added to wishlist ❤️"
+);
+
+}
+
+// ================================
+// RENDER WISHLIST
+// ================================
+
+function renderWishlist(){
+
+const container =
+document.querySelector(
+".wishlist-container"
+);
+
+if(!container) return;
+
+container.innerHTML = "";
+
+wishlist.forEach(item => {
+
+const div =
+document.createElement("div");
+
+div.className =
+"wishlist-item";
+
+div.innerHTML = `
+
+<h4>${item.name}</h4>
+<p>₹${item.price}</p>
+
+<button
+onclick="addToCart(${item.id})"
+>
+Move To Cart
+</button>
+
+`;
+
+container.appendChild(div);
+
+});
+
+}
+
+// ================================
+// DARK MODE
+// ================================
+
+let darkMode =
+localStorage.getItem(
+"darkMode"
+) === "true";
+
+applyDarkMode();
+
+function toggleDarkMode(){
+
+darkMode = !darkMode;
+
+localStorage.setItem(
+"darkMode",
+darkMode
+);
+
+applyDarkMode();
+
+}
+
+function applyDarkMode(){
+
+if(darkMode){
+
+document.body.classList.add(
+"dark-mode"
+);
+
+}
+else{
+
+document.body.classList.remove(
+"dark-mode"
+);
+
+}
+
+}
+
+// ================================
+// COUPON SYSTEM
+// ================================
+
+const coupons = {
+
+SAVE50:50,
+WELCOME100:100,
+FINDIT20:20
+
+};
+
+function applyCoupon(code){
+
+const discount =
+coupons[code];
+
+if(!discount){
+
+showNotification(
+"Invalid Coupon"
+);
+
+return;
+}
+
+const total =
+getTotalPrice();
+
+const finalAmount =
+Math.max(
+total - discount,
+0
+);
+
+showNotification(
+`₹${discount} Discount Applied`
+);
+
+console.log(
+"Final Amount:",
+finalAmount
+);
+
+}
+
+// ================================
+// CHECKOUT
+// ================================
+
+function checkout(){
+
+if(cart.length === 0){
+
+showNotification(
+"Cart Empty"
+);
+
+return;
+}
+
+const order = {
+
+id:
+Date.now(),
+
+items:[...cart],
+
+total:
+getTotalPrice(),
+
+date:
+new Date()
+.toLocaleString(),
+
+status:
+"Placed"
+
+};
+
+saveOrder(order);
+
+cart = [];
+
+saveCart();
+
+showNotification(
+"Order Placed Successfully"
+);
+
+}
+
+// ================================
+// ORDER HISTORY
+// ================================
+
+let orders =
+JSON.parse(
+localStorage.getItem(
+"orders"
+)
+) || [];
+
+function saveOrder(order){
+
+orders.push(order);
+
+localStorage.setItem(
+"orders",
+JSON.stringify(orders)
+);
+
+}
+
+function renderOrders(){
+
+const container =
+document.querySelector(
+".orders"
+);
+
+if(!container) return;
+
+orders.forEach(order => {
+
+const card =
+document.createElement("div");
+
+card.className =
+"order-card";
+
+card.innerHTML = `
+
+<h3>
+Order #${order.id}
+</h3>
+
+<p>
+₹${order.total}
+</p>
+
+<p>
+${order.status}
+</p>
+
+`;
+
+container.appendChild(card);
+
+});
+
+}
+
+// ================================
+// PRODUCT RATINGS
+// ================================
+
+function rateProduct(
+id,
+rating
+){
+
+let ratings =
+JSON.parse(
+localStorage.getItem(
+"ratings"
+)
+) || {};
+
+ratings[id] = rating;
+
+localStorage.setItem(
+"ratings",
+JSON.stringify(ratings)
+);
+
+showNotification(
+"Rating Saved ⭐"
+);
+
+}
+
+// ================================
+// PRODUCT REVIEWS
+// ================================
+
+function addReview(
+id,
+text
+){
+
+let reviews =
+JSON.parse(
+localStorage.getItem(
+"reviews"
+)
+) || {};
+
+if(!reviews[id]){
+
+reviews[id] = [];
+
+}
+
+reviews[id].push(text);
+
+localStorage.setItem(
+"reviews",
+JSON.stringify(reviews)
+);
+
+showNotification(
+"Review Added"
+);
+
+}
+
+// ================================
+// RECENTLY VIEWED
+// ================================
+
+let recent =
+JSON.parse(
+localStorage.getItem(
+"recent"
+)
+) || [];
+
+function addRecent(product){
+
+recent =
+recent.filter(
+item =>
+item.id !== product.id
+);
+
+recent.unshift(product);
+
+if(recent.length > 10){
+
+recent.pop();
+
+}
+
+localStorage.setItem(
+"recent",
+JSON.stringify(recent)
+);
+
+}
+
+// ================================
+// PRODUCT DETAILS
+// ================================
+
+function openProduct(id){
+
+const product =
+products.find(
+item =>
+item.id === id
+);
+
+if(!product) return;
+
+addRecent(product);
+
+console.log(product);
+
+}
+
+// ================================
+// TRENDING PRODUCTS
+// ================================
+
+function getTrendingProducts(){
+
+return products
+.sort(() =>
+0.5 - Math.random()
+)
+.slice(0,4);
+
+}
+
+// ================================
+// RECOMMENDATIONS
+// ================================
+
+function getRecommendations(){
+
+if(cart.length === 0){
+
+return products.slice(0,4);
+
+}
+
+const category =
+cart[0].category;
+
+return products.filter(
+item =>
+item.category === category
+);
+
+}
+
+// ================================
+// DELIVERY TIMER
+// ================================
+
+function startDeliveryTimer(){
+
+let minutes = 10;
+
+const timer =
+setInterval(() => {
+
+minutes--;
+
+console.log(
+`Delivery in ${minutes} min`
+);
+
+if(minutes <= 0){
+
+clearInterval(timer);
+
+showNotification(
+"Order Delivered 🚚"
+);
+
+}
+
+},60000);
+
+}
+
+// ================================
+// LOGIN SIMULATION
+// ================================
+
+let currentUser =
+JSON.parse(
+localStorage.getItem(
+"user"
+)
+);
+
+function login(name){
+
+currentUser = {
+
+name:name,
+id:Date.now()
+
+};
+
+localStorage.setItem(
+"user",
+JSON.stringify(
+currentUser
+)
+);
+
+showNotification(
+`Welcome ${name}`
+);
+
+}
+
+function logout(){
+
+localStorage.removeItem(
+"user"
+);
+
+currentUser = null;
+
+showNotification(
+"Logged Out"
+);
+
+}
+
+// ================================
+// USER PROFILE
+// ================================
+
+function showProfile(){
+
+if(!currentUser){
+
+showNotification(
+"Please Login"
+);
+
+return;
+}
+
+console.log(
+currentUser
+);
+
+}
+
+// ================================
+// DAILY DEAL
+// ================================
+
+function getDailyDeal(){
+
+const random =
+Math.floor(
+Math.random() *
+products.length
+);
+
+return products[random];
+
+}
+
+// ================================
+// AUTO LOAD
+// ================================
+
+window.addEventListener(
+"load",
+() => {
+
+renderWishlist();
+
+renderOrders();
+
+const deal =
+getDailyDeal();
+
+console.log(
+"Today's Deal:",
+deal
+);
+
+}
+);
+
+</script>
+
+</body>
+</html>
+
+<link rel="stylesheet" href="css/style.css">
