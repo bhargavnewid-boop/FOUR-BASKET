@@ -1,0 +1,603 @@
+/* ==========================================================================
+   RESET, BRANDING & BLINKIT QUICK-COMMERCE VARIATION VARIABLES
+   ========================================================================== */
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --bright-yellow: #fefe00;  /* Solid background fill for the icon block */
+    --forest-green: #0a5c2c;   /* Primary handles, "basket", and tagline typography */
+    --lime-green: #2bfd12;     /* Electric interactive highlights and hover states */
+    --surface-white: #ffffff;
+    --surface-light: #f6faf7;
+    --border-clean: #e2ebe5;
+    --text-dark: #0f1712;
+    --text-muted: #607367;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+    background-color: var(--surface-light);
+    color: var(--text-dark);
+    overflow-x: hidden;
+    line-height: 1.5;
+}
+
+/* Custom Clean Quick-Commerce Scrollbar for Product Sliders */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 5px;
+}
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border-clean);
+    border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--forest-green);
+}
+
+/* ==========================================================================
+   WELCOME BANNER (Tagline Text Restructuring)
+   ========================================================================== */
+.welcome-banner {
+    background: var(--forest-green);
+    color: var(--lime-green);
+    text-align: center;
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+}
+
+/* ==========================================================================
+   HEADER / NAVIGATION (Blinkit Execution Alignment)
+   ========================================================================== */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 5%;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--surface-white);
+    border-bottom: 1px solid var(--border-clean);
+}
+
+/* Rebuilding Logo Area around a Solid Yellow Box Icon Framework */
+.logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    color: var(--forest-green); /* "basket" branding element name */
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+/* Emulating the icon inside a dedicated crisp square profile background */
+.logo::before {
+    content: "\eb95"; /* Generic basket font-icon fallback index if using icon fonts */
+    font-family: sans-serif; 
+    background: var(--bright-yellow); /* The requested pure bright yellow box fill */
+    color: var(--forest-green);      /* Basket icon layout handles & body color */
+    width: 42px;
+    height: 42px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 10px rgba(254, 254, 0, 0.3);
+}
+
+.search-box {
+    flex: 0 1 550px;
+    margin: 0 2rem;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.85rem 1.4rem;
+    background: #f1f6f2;
+    border: 1px solid var(--border-clean);
+    border-radius: 10px;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    transition: all 0.2s ease;
+}
+
+.search-box input:focus {
+    outline: none;
+    background: var(--surface-white);
+    border-color: var(--forest-green);
+    box-shadow: 0 0 0 4px rgba(10, 92, 44, 0.08);
+}
+
+/* Interactive Modern Blinkit Action Pill */
+.cart-area {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    background: var(--forest-green);
+    padding: 0.65rem 1.3rem;
+    border-radius: 12px;
+    font-weight: 700;
+    color: var(--surface-white);
+    transition: all 0.2s ease;
+}
+
+.cart-area:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 15px rgba(10, 92, 44, 0.25);
+}
+
+.cart-count {
+    background: var(--lime-green);
+    color: var(--forest-green);
+    padding: 0.2rem 0.6rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 800;
+}
+
+/* ==========================================================================
+   HERO / INTRO SECTION
+   ========================================================================== */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 4rem 1rem 3rem;
+    background: linear-gradient(180deg, var(--surface-white) 0%, transparent 100%);
+}
+
+.hero-text h1 {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: -0.5px;
+    margin-bottom: 0.8rem;
+}
+
+.hero-text p {
+    color: var(--forest-green); /* Tagline assignment */
+    font-size: 1.15rem;
+    font-weight: 600;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.hero-text button {
+    background: var(--forest-green);
+    color: var(--surface-white);
+    font-weight: 700;
+    border: none;
+    padding: 1rem 2.5rem;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.hero-text button:hover {
+    background: #063d1d;
+    box-shadow: 0 4px 15px rgba(6, 61, 29, 0.2);
+}
+
+/* ==========================================================================
+   CATEGORY SHORTCUTS GRID
+   ========================================================================== */
+.categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 1rem;
+    padding: 1rem 5% 3rem;
+}
+
+.category {
+    background: var(--surface-white);
+    border: 1px solid var(--border-clean);
+    padding: 1.2rem 0.8rem;
+    border-radius: 16px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 0.6rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-dark);
+    transition: all 0.2s ease;
+}
+
+.category:hover {
+    border-color: var(--forest-green);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+}
+
+/* ==========================================================================
+   HORIZONTAL SLIDING PRODUCT MATRIX (Strict Layout Architecture)
+   ========================================================================== */
+.product-section {
+    padding: 2rem 0 2rem 5%;
+}
+
+.product-section h2 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    color: var(--text-dark);
+}
+
+/* Modified to achieve the rapid-swipe layout of quick-commerce setups */
+.slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.2rem;
+    padding: 0.4rem 5% 1.2rem 0;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.card {
+    flex: 0 0 210px; /* Locks cards into layout matrix slots cleanly for side sliding */
+    background: var(--surface-white);
+    border: 1px solid var(--border-clean);
+    border-radius: 16px;
+    padding: 1rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+    border-color: rgba(10, 92, 44, 0.25);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+}
+
+/* Iconic bright yellow background component for badge labels */
+.offer-badge {
+    position: absolute;
+    top: 0;
+    left: 12px;
+    background: var(--bright-yellow);
+    color: var(--forest-green);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0 0 6px 6px;
+    font-size: 0.7rem;
+    font-weight: 800;
+    z-index: 2;
+}
+
+.card img {
+    width: 100%;
+    height: 120px;
+    object-fit: contain;
+    margin: 0.5rem 0;
+}
+
+.card h3 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    line-height: 1.3;
+    margin-bottom: 0.2rem;
+    height: 36px;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.rating {
+    color: #ffa800;
+    font-size: 0.8rem;
+    font-weight: 700;
+    margin-bottom: 0.2rem;
+}
+
+.weight {
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+}
+
+.price-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: auto;
+    margin-bottom: 1rem;
+}
+
+.price {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.old-price {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    font-size: 0.8rem;
+}
+
+/* Quick Commerce Action Toggles */
+.add-btn {
+    width: 100%;
+    background: var(--surface-white);
+    border: 1px solid var(--forest-green);
+    color: var(--forest-green);
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.add-btn:hover {
+    background: var(--forest-green);
+    color: var(--surface-white);
+    box-shadow: 0 4px 10px rgba(10, 92, 44, 0.15);
+}
+
+/* ==========================================================================
+   FLASH SALE ELEMENT BAR
+   ========================================================================== */
+.special-offer {
+    margin: 2rem 5%;
+    background: var(--bright-yellow);
+    border: 1px solid var(--border-clean);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.special-offer h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--forest-green);
+}
+
+.special-offer p {
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+.special-offer button {
+    background: var(--forest-green);
+    color: var(--surface-white);
+    border: none;
+    padding: 0.9rem 2.2rem;
+    border-radius: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+/* ==========================================================================
+   SUBSCRIPTION, FEATURES & BENEFITS BLOCK
+   ========================================================================== */
+.benefits {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    padding: 2rem 5%;
+}
+
+.benefit {
+    text-align: center;
+    background: var(--surface-white);
+    border: 1px solid var(--border-clean);
+    padding: 1.5rem;
+    border-radius: 12px;
+}
+
+.benefit h3 {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-top: 0.4rem;
+}
+
+.newsletter, .app-banner {
+    padding: 3rem 5%;
+    text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.newsletter h2, .app-banner h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.newsletter p, .app-banner p {
+    color: var(--text-muted);
+    margin: 0.4rem 0 1.5rem;
+    font-size: 0.9rem;
+}
+
+.newsletter-box {
+    display: flex;
+    gap: 0.5rem;
+    background: var(--surface-white);
+    padding: 0.3rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-clean);
+}
+
+.newsletter-box input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+}
+.newsletter-box input:focus { outline: none; }
+
+.newsletter-box button, .app-buttons button {
+    background: var(--forest-green);
+    color: var(--surface-white);
+    border: none;
+    padding: 0.75rem 1.8rem;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.app-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+/* ==========================================================================
+   CART FLY-OUT DRAWER PANEL
+   ========================================================================== */
+#cartDrawer {
+    position: fixed;
+    top: 0;
+    right: -420px;
+    width: 100%;
+    max-width: 400px;
+    height: 100%;
+    background: var(--surface-white);
+    box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+#cartDrawer.active {
+    right: 0;
+}
+
+.cart-header {
+    padding: 1.2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-clean);
+}
+
+#closeCart {
+    background: transparent;
+    border: none;
+    color: var(--text-dark);
+    font-size: 1.3rem;
+    cursor: pointer;
+}
+
+#cartItems {
+    flex: 1;
+    padding: 1.2rem;
+    overflow-y: auto;
+}
+
+.cart-footer {
+    padding: 1.2rem;
+    border-top: 1px solid var(--border-clean);
+    background: var(--surface-light);
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+#cartTotal {
+    color: var(--text-dark);
+}
+
+#checkoutBtn {
+    width: 100%;
+    padding: 1rem;
+    border-radius: 10px;
+    border: none;
+    background: var(--forest-green);
+    color: var(--surface-white);
+    font-weight: 700;
+    font-size: 0.95rem;
+    cursor: pointer;
+}
+
+#overlay {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 150;
+    display: none;
+}
+
+/* ==========================================================================
+   FOOTER BLOCK SETTING
+   ========================================================================== */
+footer {
+    border-top: 1px solid var(--border-clean);
+    padding: 3rem 5%;
+    background: var(--surface-white);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+}
+
+.footer-column h3 {
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-dark);
+}
+
+.footer-column p, .footer-column ul li {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+.footer-column ul li { cursor: pointer; }
+.footer-column ul li:hover { color: var(--forest-green); }
+
+.copyright {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--surface-light);
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    border-top: 1px solid var(--border-clean);
+}
+
+/* Mobile Visibility Fallbacks */
+.mobile-nav { display: none; }
+
+@media(max-width: 768px) {
+    .hero-text h1 { font-size: 2rem; }
+    .search-box { display: none; }
+    .categories { grid-template-columns: repeat(3, 1fr); }
+}
